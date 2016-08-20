@@ -1,0 +1,83 @@
+{
+  "name": "Freifunk Ortenau",
+  "url": "https://ortenau.freifunk.net",
+  "location": {
+    "city": "Offenburg",
+    "country": "DE",
+    "lat": 48.47,
+    "lon": 7.95
+  },
+  "contact": {
+    "email": "info@ortenau.freifunk.net",
+    "irc": "irc://irc.hackint.eu/ffortenau",
+    "ml": "https://lists.freifunk.net/mailman/listinfo/ortenau-freifunk.net",
+    "twitter": "@ffortenau"
+  },
+  "state": {
+    "nodes": 27,
+    "focus": [
+      "Public Free Wifi",
+      "Social Community Building",
+      "Free internet access"
+    ],
+    "lastchange": "2016-08-02T16:36:00.881Z"
+  },
+  "timeline": [
+    {
+      "description": "Gründung der lokalen Gruppe",
+      "timestamp": "2016-05-22"
+    }
+  ],
+  "feeds": [
+    {
+      "name": "News",
+      "category": "blog",
+      "type": "rss",
+      "url": "https://ortenau.freifunk.net/feed.xml"
+    }
+  ],
+  "nodeMaps": [
+    {
+      "url": "https://ortenau.freifunk.net/karte/",
+      "interval": "5",
+      "technicalType": "meshviewer",
+      "mapType": "geographical"
+    }
+  ],
+  "techDetails": {
+    "firmware": {
+      "name": "gluon",
+      "url": "https://ortenau.freifunk.net/firmware/",
+      "vpnaccess": "fwimage"
+    },
+    "networks": {
+      "ipv6": [
+        {
+          "network": "2a03:2260:a::/48"
+        }
+      ],
+      "ipv4": [
+        {
+          "network": "10.214.0.0/16"
+        },
+        {
+          "network": "10.214.192.0/18"
+        },
+        {
+          "network": "185.66.194.8/29"
+        }
+      ]
+    },
+    "routing": [
+      "batman-adv"
+    ],
+    "updatemode": [
+      "manual",
+      "autoupdate"
+    ],
+    "legals": [
+      "institutions"
+    ]
+  },
+  "api": "0.4.14"
+}

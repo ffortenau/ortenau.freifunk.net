@@ -1,0 +1,84 @@
+---
+title: Info
+layout:
+permalink: /
+---
+
+
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="landing">
+
+    {% include header.html %}
+
+	<section id="banner">
+		<h2><img class="image start" src="../images/freifunk_karlsruhe_logo_webseite.png" alt="freifunk_ortenau_logo_webseite"></h2>
+		<p>Wir errichten ein freies, drahtloses Mitmachnetz in der Ortenau.</p>
+	</section>
+
+	<section id="main" class="container">
+		<section class="special action">
+			<p>Dafür benötigen wir deine Unterstützung!</p>
+			<ul class="actions">
+				<li><a href="{{ "kontakt/" | prepend: site.baseurl }}" class="button altspecial icon fa-calendar">Komm zum nächsten Treffen</a></li>
+				<li><a href="{{ "mitmachen/" | prepend: site.baseurl }}" class="button special icon fa-users">Mach mit!</a></li>
+				<li><a target="_blank" href="https://forum.ortenau.freifunk.net" class="button alt2special icon fa-comment">Diskutiere mit der Community</a></li> 
+			</ul>
+		</section>
+		<section class="box" id="news">
+			{% assign post = site.posts.first %}
+			{% assign content = post.content %}
+			<h2><strong class="in-line-highlight">{{post.title}}</strong></h2>
+			<p>{{post.excerpt | remove: '<p>' | remove: '</p>'}} [...]</p>
+			<p><a href="news/" class="button special">Weiterlesen</a></p>
+		</section>
+		<section class="box special features">
+			<header class="major">
+				<h2>Lisa erklärt Freifunk</h2>
+			</header>
+			<video class="ff-verbindet-video" preload="none" poster="/images/video-thumbnail.png" controls>
+				<source src="/media/Freifunk-verbindet.mp4 " type="video/mp4">
+			</video>
+			<a rel="license" href="http://www.kosmonautensofa.de/animation/freifunk-verbindet"><img alt="Creative Commons License" style="border-width:0" src="/images/cc.png" /></a>
+			<p class="video-attribution">Philipp Seefeldt, Silke Meyer, Sven Heinze, Jürgen Neumann, Anne Helm, Thomas Deittert</p>
+		</section>
+		<section class="box special features">
+			<header class="major">
+				<h2>Freifunk ist mehr als kostenloses Internet!</h2>
+				<p class="large">Hier bieten Ortenauer wie du und ich Inhalte und Dienste in einem regionalen Netzwerk, welches immer ohne Verträge oder die Angabe von persönlichen Daten von jedem nutzbar ist.</p>
+			</header>
+			<div class="features-row">
+				<section>
+					<span class="icon major fa-unlock-alt accent2"></span>
+					<h3>öffentlich und nicht kommerziell</h3>
+					<p>Die Idee von Freifunk ist es, mittels handelsüblicher WLAN-Accesspoints ein unabhängiges, stadtübergreifendes Netzwerk aufzubauen. Idealerweise können alle Knoten im Netzwerk miteinander kommunizieren, auch wenn diese über keine direkte Internetverbindung verfügen.</p>
+				</section>
+				<section>
+					<span class="icon major fa-users accent3"></span>
+					<h3>gemeinschaftlich betrieben</h3>
+					<p>Jeder mit einem WLAN-fähigen Gerät kann am Netzwerk teilnehmen und es sogar selbst unterstützen. Mit einem eigenen Accesspoint kannst du das Netz erweitern und stabilisieren sowie einen Internet-Zugang für alle bereitstellen.</p>
+				</section>
+			</div>
+			<div class="features-row">
+				<section>
+					<span class="icon major fa-user-secret accent4"></span>
+					<h3>anonym zugänglich und trotzdem rechtssicher</h3>
+					<p>Freifunk ist ein offenes Netz, ohne Passwörter oder verpflichtende Registrierungsformulare. Du musst trotzdem keine Angst vor der Störerhaftung haben: Um jeglichen rechtlichen Problemen aus dem Weg zu gehen, wird der Internetverkehr von uns über ein VPN abgewickelt.</p>
+				</section>
+				<section>
+					<span class="icon major fa-cogs accent5"></span>
+					<h3>dezentral organisiert</h3>
+					<p>In Gebieten mit geringer Freifunk-Abdeckung nutzen wir einen Teil deiner Internetverbindung, um sicheren Zugang zum Freifunk-Netz bereitzustellen. Mit zunehmendem Ausbau des Netzes wird sich dein Freifunk-Zugangspunkt zu benachbarten Knoten verbinden. Verbindungen werden dann zunehmend über das Mesh-Netz geleitet.</p>
+				</section>
+			</div>
+		</section>
+	 </section>
+    {% include cta.html %}
+    {% include footer.html %}
+
+  </body>
+
+</html>

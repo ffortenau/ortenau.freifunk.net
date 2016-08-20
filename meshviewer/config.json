@@ -1,0 +1,21 @@
+{
+  "dataPath": "https://ortenau.freifunk.net/data/",
+  "siteName": "Freifunk Ortenau",
+  "mapSigmaScale": 0.5,
+  "showContact": true,
+  "maxAge": 14,
+  "mapLayers": [
+    { "name": "Mapbox",
+      "url": "https://api.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpbTgzcHQxMzAxMHp0eWx4bWQ1ZHN2NGcifQ.WVwjmljKYqKciEZIC3NfLA",
+      "config": {
+        "subdomains": "1234",
+        "type": "osm",
+        "attribution": "Tiles &copy; <a href=\"https://www.mapbox.org/\" target=\"_blank\">Mapbox</a>, Data CC-BY-SA OpenStreetMap",
+        "maxZoom": 18
+      }
+    },
+    {
+      "name": "Stamen.TonerLite"
+    }
+  ]
+}

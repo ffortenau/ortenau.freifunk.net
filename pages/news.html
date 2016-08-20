@@ -1,0 +1,86 @@
+---
+title: News
+layout:
+main_menu: true
+weight: 1
+permalink: /news/
+top_url: /news/
+---
+
+<!DOCTYPE html>
+<html>
+  {% include head-news.html %}
+
+  <body>
+    {% include header.html %}
+    <section id="main" class="container">
+		<header>
+			<h2 class="post-title">{{ page.title }}</h2>
+		</header>
+		<div class="row">
+			<div class="8u 12u(3)">
+				{% for post in site.posts %}
+				<div class="box">
+						<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+						<h3>
+							<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+						</h3>
+
+						<div class="post-content">
+                                                {{ post.content }}
+                                                {% include social.html post=post %}
+                                                </div>
+				</div>
+				{% endfor %}
+				<p class="rss-subscribe">
+					<a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+					<span class="fa-stack fa-sm">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-rss fa-stack-1x"></i>
+					</span>
+					RSS-Feed
+					</a> abonnieren
+				</p>
+			</div>
+			<div class="4u 12u(3)">
+				<div class="box">
+					<h3>Nächstes Treffen</h3>
+					<p><div id="nextMeetingTime"></div> ab 20 Uhr in den Räumen des <a href="/kontakt/">section77 e.V.</a>.</p>
+				</div>
+				<div class="box">
+					<h3>Statistik</h3>
+					<p>In Kürze gibt es hier Statistiken aus dem FFOG-Netz. So lange findest du alle Statistiken <a href="https://ortenau.freifunk.net/statistiken"> hier</a> </p>
+				</div>
+				</div>
+			</div>
+
+		</div>
+    </section>
+
+    {% include footer.html %}
+
+   <script>
+	   moment.locale('de');
+	   interval = moment( "2016-27-07" ).recur().every(2).weeks();
+	   now = moment(new Date());
+	   interval.fromDate(new Date());
+	   nextDate = moment(new Date(interval.next(1)));
+	
+	   if (nextDate.isSame(now, 'day')) {
+		   nextDateStr = "heute";
+	   } else {
+		
+		   nextDateStr = "";
+		   if (nextDate.diff(moment(), 'day') < 7) {
+			   nextDateStr += "kommenden ";
+			}
+			
+		   nextDateStr += nextDate.format("dddd") + ", den " + nextDate.format("DD. MMMM");
+	   }
+	   $('#nextMeetingTime').text(nextDateStr);
+  </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,69 @@
+---
+title: Kontakt
+permalink: /kontakt/
+top_url: /kontakt/
+main_menu: true
+weight: 7
+layout:
+---
+
+<!DOCTYPE html>
+<html>
+  {% include head-kontakt-map.html %}
+  <script src="{{ "/js/eyecandy.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/TweenMax.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/moment.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/moment-with-locales.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/js/moment-recur.js" | prepend: site.baseurl }}"></script>
+
+  <body onLoad="mapinit();">
+    {% include header.html %}
+    <section id="main" class="container">
+		<header>
+			<h2 class="post-title">{{ page.title }}</h2>
+		</header>
+
+		<p style="text-align:center">Wir freuen uns, wenn du Kontakt mit uns aufnimmst, sei es persönlich bei einem unserer Treffen oder über das Internet.</p>
+
+		<div class="box" id="treffen">
+			<h3>Treffen</h3>
+			<p>Wir treffen uns jeden 2. und 4. Mittwoch im Monat in den Räumen des <a href="https://section77.de">Section 77 e.V.</a> (Englerstra&szlig;e 16, Offenburg). Das nächste Treffen findet <strong>am <span id="nextMeetingTime"></span></strong> statt.</p>
+		</div>
+		<div class="box">
+			<h3>Kontaktdaten</h3>
+			<p>Wenn es dir nicht möglich ist, uns zu besuchen, dann gibt es natürlich noch alternative Kontaktwege:</p>
+			<ul>
+				<li><a href="mailto:{{site.email}}">Email ({{site.email}})</a></li>
+				<li><a href="https://www.twitter.com/{{site.twitter_username}}">Twitter (@{{site.twitter_username}})</a></li>
+				<li><a href="https://www.facebook.com/{{site.facebook_username}}">Facebook ({{site.facebook_username}})</a></li>
+				<li><a href="https://lists.freifunk.net/mailman/listinfo/ortenau-freifunk.net">Mailing-Liste</a></li>
+				<li>(oder mit IRC-Client <a href="irc://irc.hackint.eu/ffortenau">irc://irc.hackint.eu/ffortenau</a>)</li>
+
+
+			</ul>
+		</div>
+    </section>
+   <script>
+	   moment.locale('de');
+	   interval = moment( "2016-27-07" ).recur().every(2).weeks();
+	   now = moment(new Date());
+	   interval.fromDate(new Date());
+	   nextDate = moment(new Date(interval.next(1)));
+	
+	   if (nextDate.isSame(now, 'day')) {
+		   nextDateStr = "heute";
+	   } else {
+		
+		   nextDateStr = "";
+		   if (nextDate.diff(moment(), 'day') < 7) {
+			   nextDateStr += "kommenden ";
+			}
+			
+		   nextDateStr += nextDate.format("dddd") + ", den " + nextDate.format("DD. MMMM");
+	   }
+	   $('#nextMeetingTime').text(nextDateStr);
+  </script>
+    {% include footer.html %}
+
+  </body>
+</html>
