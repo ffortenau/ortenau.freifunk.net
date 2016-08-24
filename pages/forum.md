@@ -8,5 +8,5 @@ weight: 6
 layout: base
 hide_footer: true
 ---
-In unserem <a href="https://forum.ortenau.freifunk.net">Forum</a> kannst du einfach fragen an die Community stellen und du findest viele weiter Informationen dort.
+In unserem [Forum](https://forum.ortenau.freifunk.net) kannst du einfach fragen an die Community stellen und du findest viele weiter Informationen dort.
 
