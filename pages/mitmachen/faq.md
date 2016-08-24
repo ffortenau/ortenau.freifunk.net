@@ -3,7 +3,7 @@ title: Häufige Fragen
 layout: page
 sub_menu: true
 top_url: /mitmachen/
-sub_weight: 6
+sub_weight: 4 
 permalink: /mitmachen/faq/
 ---
 

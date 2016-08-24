@@ -3,7 +3,7 @@ title: Router einrichten
 layout: page
 sub_menu: true
 top_url: /mitmachen/
-sub_weight: 4
+sub_weight: 2 
 permalink: /mitmachen/router-einrichten/
 ---
 
