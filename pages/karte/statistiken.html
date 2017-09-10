@@ -13,11 +13,11 @@ hide_footer: true
 $(document).ready(function() {
   if(window.location.hash) {
     $("iframe").attr("src",
-      "/grafana/" + window.location.hash);
+      "http://stats.ortenau.freifunk.net/dashboard/db/freifunk-ortenau" + window.location.hash);
   }
 });
 </script>
 
-<iframe src="/grafana/"
+<iframe src="http://stats.ortenau.freifunk.net/dashboard/db/freifunk-ortenau"
   width="100%" style="display:block; height: calc(100vh - 3.25em);width: 100%;">
 </iframe>
